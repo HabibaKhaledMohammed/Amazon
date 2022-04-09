@@ -1,5 +1,5 @@
 # Amazon
-System that Manage online Shopping [E-Commerce System]
+System that Manage online Shopping (E-Commerce System)
 
 # System Screens:
 ![Screenshot (113)](https://user-images.githubusercontent.com/48651088/162579688-6aa7f737-a786-4e9e-a42b-b0bd9ddb9c40.png)
