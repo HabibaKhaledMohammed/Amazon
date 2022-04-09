@@ -2,7 +2,6 @@
 System that Manage online Shopping [E-Commerce System]
 
 # System Screens:
-(https://user-images.githubusercontent.com/48651088/162579687-96163c95-1f37-4c04-b82c-2a230870636b.png)
 ![Screenshot (113)](https://user-images.githubusercontent.com/48651088/162579688-6aa7f737-a786-4e9e-a42b-b0bd9ddb9c40.png)
 ![Screenshot (114)](https://user-images.githubusercontent.com/48651088/162579690-18e7b71e-2f50-4525-b9cd-c04c4b456582.png)
 ![Screenshot (110)](https://user-images.githubusercontent.com/48651088/162579685-89439657-1641-488f-829d-9ed17f16baf6.png)
