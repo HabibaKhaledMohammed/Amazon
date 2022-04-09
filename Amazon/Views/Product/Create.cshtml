@@ -1,0 +1,86 @@
+﻿@model Product;
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<User> UserManager;
+
+<div class="contact-form mainBgContainer">
+    <div class="container">
+        <div class="row m-auto">
+           @* <div class="col-md-6 venContainer">
+                <img src="~/img/vendor.jpg" class="img-fluid vendorImg" />
+            </div>*@
+            <div class="col-md-6 FormSection m-auto">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="contact__form__title">
+                            <h2>Create Product</h2>
+                        </div>
+                    </div>
+                </div>
+                <form action="/Product/Create" method="post">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="text" id="Name" name="Name" value="@Model.Name" placeholder="Product Name">
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <select class="form-control nice-myselect mt-1  form-input nice-select mb-4" name="CategoryId" id="CategoryId">
+                                <option selected disabled hidden value=0>Select Category</option>
+                                @foreach (var cat in ViewBag.categories)
+                                {
+                                    <option value="@cat.Id">@cat.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="Category" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <select class="form-control  nice-myselect mt-1  form-input nice-select mb-4" name="VendorId" id="VendorId">
+                                <option selected disabled hidden value=0>Select Vendor</option>
+                                @foreach (var vendor in ViewBag.vendors)
+                                {
+                                    <option value="@vendor.Id">@vendor.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="Vendor" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="number" id="PricePerUnit" name="PricePerUnit" value="@Model.PricePerUnit">
+                            <span asp-validation-for="PricePerUnit" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="file" accept="images/*" id="ImageURL" value="/img/product/@Model.ImageURL" name="ImageURL" >
+                            <span asp-validation-for="ImageURL" class="text-danger"></span>
+                        </div>
+
+                         <div class="col-lg-12 col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <textarea form-input" id="Description" name="Description" value="@Model.Description" rows="3"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                         <button type="submit" class="site-btn">Create Product</button>
+                        
+                        </div>
+
+
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+     
+
+    </div>
+
+</div>
+
+
+
+
+        @section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

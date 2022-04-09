@@ -1,0 +1,59 @@
+﻿@model Amazon.Models.Vendor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<hr />
+
+<div class="contact-form spad">
+    <div class="container">
+        <div class="row">
+              <div class="col-md-6 venContainer">
+                <img src="~/img/vendor.jpg" class="img-fluid vendorImg" />
+            </div>
+            <div class="col-md-6 FormSection">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="contact__form__title">
+                            <h2>Create Vendor</h2>
+                        </div>
+                    </div>
+                </div>
+                <form asp-action="Create">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="text" placeholder="Vendor Name" asp-for="Name">
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <input type="text" placeholder="Vendor Location" asp-for="Location">
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <input type="text" placeholder="Vendor Phone" asp-for="Phone">
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                            <button type="submit" class="site-btn">Create Vendor</button>
+
+                        </div>
+                    </div>
+                </form>
+               <img src="~/img/cherry.jpg" class="img-fluid CherryImg bounce-2" />
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="ListBack"><i class="fa-solid fa-left-long"></i>Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

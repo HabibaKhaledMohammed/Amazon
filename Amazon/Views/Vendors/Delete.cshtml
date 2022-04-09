@@ -1,0 +1,53 @@
+﻿@model Amazon.Models.Vendor
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div>
+    <div class="details-background">
+
+        <div class="row">
+            <div class="col-md-4 side-Img"></div>
+            <div class="col-md-8">
+                <h4 class="d-title">Vendor Data Details</h4>
+                <dl class="row m-auto DataContainer">
+
+                    <dt class="col-sm-2 title">
+                        @Html.DisplayNameFor(model => model.Name):
+                    </dt>
+                    <dd class="col-sm-10 Data">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="col-sm-2 title">
+                        @Html.DisplayNameFor(model => model.Location):
+                    </dt>
+                    <dd class="col-sm-10 Data">
+                        @Html.DisplayFor(model => model.Location)
+                    </dd>
+                    <dt class="col-sm-2 title">
+                        @Html.DisplayNameFor(model => model.Phone):
+                    </dt>
+                    <dd class="col-sm-10 Data">
+                        @Html.DisplayFor(model => model.Phone)
+                    </dd>
+                </dl>
+
+
+
+            </div>
+
+        </div>
+
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <i class="fa-solid fa-trash-can"></i>
+            <input type="submit" value="Delete" class="delete deleteBtn" />
+            |
+            <a asp-action="Index" class="ListBack"><i class="fa-solid fa-left-long"></i>Back to List</a>
+
+        </form>
+    </div>
+</div>
